@@ -1,0 +1,7 @@
+module.exports = {
+    instagram: {
+        clientId: '434732221251949',
+        clientSecret: 'IGQVJYN1BpTjA2TDZAmS2pPNVAtNG5IbGxyUWdBNnRmU3Rqdkh2Umk2cWlYTmpnTEpFc2gtR2hzV2N2aTYwZAC1HbTh6YVdzc2drejZAZAOXBTaWk4R0RRUUFDZAzhUR0YxeWtrOTlYZAW5jU3FpYVp4TUhhMwZDZD',
+        accessToken: 'IGQVJYN1BpTjA2TDZAmS2pPNVAtNG5IbGxyUWdBNnRmU3Rqdkh2Umk2cWlYTmpnTEpFc2gtR2hzV2N2aTYwZAC1HbTh6YVdzc2drejZAZAOXBTaWk4R0RRUUFDZAzhUR0YxeWtrOTlYZAW5jU3FpYVp4TUhhMwZDZD',
+    }   
+}
