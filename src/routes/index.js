@@ -9,7 +9,7 @@ const instagram = new Instagram({
   clientId: clientId,
   clientSecret: clientSecret
 });
-const redirectUri = "https://pagina-prueba1.herokuapp.com//handleauth";
+const redirectUri = "https://pagina-prueba1.herokuapp.com/handleauth";
 
 // First redirect user to instagram oauth
 router.get("/auth/instagram", (req, res) => {
