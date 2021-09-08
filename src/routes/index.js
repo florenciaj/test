@@ -20,10 +20,9 @@ router.get("/auth/instagram", (req, res) => {
 // Handle auth code and get access_token for user
 router.get("/handleauth", async (req, res) => {
   console.log('hi')
-  try {
+  /* try {
     // The code from the request, here req.query.code for express
     const code = req.query.code;
-    console.log('req ', req);
     console.log('req.query ', req.query);
     console.log('req.query.code ', req.query.code);
     const data = await instagram.authorizeUser(code, redirectUri);
@@ -38,8 +37,14 @@ router.get("/handleauth", async (req, res) => {
     console.log(instagram);
     res.redirect("/profile");
   } catch (err) {
-    res.json(err);
-  }
+    res.json(err); 
+  }*/
+  res.send('común');
+});
+
+router.get("/handleauth/:params", async (req, res) => {
+  console.log('hi 2')
+  res.send('con params');
 });
 
 router.get("/", (req, res) => {
