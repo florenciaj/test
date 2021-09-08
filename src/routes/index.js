@@ -13,7 +13,7 @@ const redirectUri = "https://pagina-prueba1.herokuapp.com/handleauth";
 
 // First redirect user to instagram oauth
 router.get("/auth/instagram", (req, res) => {
-  res.redirect(`https://api.instagram.com/oauth/authorize?client_id=434732221251949&redirect_uri=https://pagina-prueba1.herokuapp.com/&scope=user_profile&response_type=code`
+  res.redirect(`https://api.instagram.com/oauth/authorize?client_id=434732221251949&redirect_uri=https://pagina-prueba1.herokuapp.com/handleauth&scope=user_profile&response_type=code`
   );
 });
 
