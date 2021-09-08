@@ -9,25 +9,27 @@ const instagram = new Instagram({
   clientId: clientId,
   clientSecret: clientSecret
 });
-const redirectUri = "https://pagina-prueba1.herokuapp.com/handleauth";
+const redirectUri = "http://localhost:3000/handleauth";
 
 // First redirect user to instagram oauth
 router.get("/auth/instagram", (req, res) => {
-  res.redirect(
-    instagram.getAuthorizationUrl(redirectUri, {
-      // an array of scopes
-      scope: ["basic", "likes"],
-      // an optional state
-      state: "your state"
-    })
+  res.redirect(`https://api.instagram.com/oauth/authorize
+  ?client_id=434732221251949
+  &redirect_uri=${redirectUri}
+  &scope=user_profile
+  &response_type=code`
   );
 });
 
 // Handle auth code and get access_token for user
 router.get("/handleauth", async (req, res) => {
+  console.log('hi')
   try {
     // The code from the request, here req.query.code for express
     const code = req.query.code;
+    console.log('req ', req);
+    console.log('req.query ', req.query);
+    console.log('req.query.code ', req.query.code);
     const data = await instagram.authorizeUser(code, redirectUri);
     // data.access_token contain the user access_token
     // res.json(data);
@@ -53,7 +55,7 @@ router.get("/profile", async (req, res) => {
     const profileData = await instagram.get("users/self");
     const media = await instagram.get('users/self/media/recent');
     console.log(profileData);
-    res.render("profile", { user: profileData.data, posts: media.data});
+    res.render("profile", { user: profileData.data, posts: media.data });
   } catch (err) {
     console.log(err);
   }
