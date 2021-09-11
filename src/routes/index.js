@@ -25,10 +25,8 @@ router.get("/handleauth", async (req, res) => {
     const code = req.query.code;
     const data = await instagram.authorizeUser(code, redirectUri);
     console.log('1'); 
-    req.session.user_id = data.user_id;
-    console.log('2');
     instagram.config.accessToken = data.access_token;
-    console.log('3'); 
+    console.log('2');
     res.send(instagram);
   } catch (err) {
     res.json(err);
