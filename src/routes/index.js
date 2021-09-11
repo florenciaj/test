@@ -29,6 +29,8 @@ router.get("/handleauth", async (req, res) => {
     console.log(data);
     console.log(data.access_token);
     console.log(data.user_id);
+    console.log('req ', req);
+    console.log('req.session ', req.session);
 
     req.session.access_token = data.access_token; // data.access_token contain the user access_token
     console.log('3');    
