@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 require('dotenv').config();
-const fetch = require("node-fetch");
+const fetchE = require("node-fetch");
 
 
 // Instagram API
@@ -53,7 +53,7 @@ router.get("/profile", async (req, res) => {
   console.log('url ', url);
 
   try {
-    fetch(url, {
+    fetchE(url, {
       method: 'GET', // or 'PUT'
     }).then(res => {
       console.log('res ', res);
