@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 require('dotenv').config();
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 // Instagram API
 const Instagram = require("node-instagram").default;
