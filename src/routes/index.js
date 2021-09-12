@@ -37,9 +37,14 @@ router.get("/", (req, res) => {
 
 router.get("/profile", async (req, res) => {
   try {
+    console.log('1');
     const profileData = await instagram.get("users/self");
+    console.log('2');
+    console.log('profileData ', profileData);
     const media = await instagram.get('users/self/media/recent');
+    console.log('3');
     console.log(profileData);
+    console.log('4');
     res.render("profile", { user: profileData.data, posts: media.data });
   } catch (err) {
     console.log(err);
