@@ -38,7 +38,7 @@ router.get("/", (req, res) => {
 
 router.get("/profile", async (req, res) => {
   try {
-    var url = `https://graph.facebook.com/v11.0/17841449474447015?fields=biography%2Cfollowers_count%2Cfollows_count%2Cid%2Cmedia_count%2Cname%2Cusername%2Cmedia&access_token=${instagram.config.userId}`;
+    var url = `https://graph.facebook.com/v11.0/17841449474447015?fields=biography%2Cfollowers_count%2Cfollows_count%2Cid%2Cmedia_count%2Cname%2Cusername%2Cmedia&access_token=${instagram.config.access_token}`;
     
     fetch(url, {
       method: 'GET', // or 'PUT'
