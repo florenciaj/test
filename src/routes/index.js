@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+require('dotenv').config()
 
 // Instagram API
 const Instagram = require("node-instagram").default;
@@ -31,6 +32,9 @@ router.get("/handleauth", async (req, res) => {
     console.log('4');
     instagram.config.userId = data.user_id;
     console.log('5');
+    console.log(process.env.authToken);
+    process.env.authToken = data.access_token;
+  var url = `https://graph.face
     res.redirect("/profile");
   } catch (err) {
     res.json(err);
@@ -43,7 +47,7 @@ router.get("/", (req, res) => {
 
 router.get("/profile", async (req, res) => {
   console.log('profile');
-  var url = `https://graph.facebook.com/v11.0/17841449474447015?fields=biography%2Cfollowers_count%2Cfollows_count%2Cid%2Cmedia_count%2Cname%2Cusername%2Cmedia&access_token=${instagram.config.access_token}`;
+  book.com/v11.0/17841449474447015?fields=biography%2Cfollowers_count%2Cfollows_count%2Cid%2Cmedia_count%2Cname%2Cusername%2Cmedia&access_token=${process.env.authToken}`;
   console.log('url ', url);
 
   try {
