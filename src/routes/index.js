@@ -25,6 +25,7 @@ router.get("/handleauth", async (req, res) => {
     const code = req.query.code;
     const data = await instagram.authorizeUser(code, redirectUri);
     instagram.config.accessToken = data.access_token;
+    instagram.config.userId = data.user_id;
     res.redirect("/profile");
   } catch (err) {
     res.json(err);
@@ -37,14 +38,13 @@ router.get("/", (req, res) => {
 
 router.get("/profile", async (req, res) => {
   try {
-    console.log('1');
-    const profileData = await instagram.get("users/self");
-    console.log('2');
-    console.log('profileData ', profileData);
-    const media = await instagram.get('users/self/media/recent');
-    console.log('3');
-    console.log(profileData);
-    console.log('4');
+    var url = `https://graph.facebook.com/v11.0/17841449474447015?fields=biography%2Cfollowers_count%2Cfollows_count%2Cid%2Cmedia_count%2Cname%2Cusername%2Cmedia&access_token=${instagram.config.userId}`;
+    
+    fetch(url, {
+      method: 'GET', // or 'PUT'
+    }).then(res => res.json())
+    .catch(error => console.error('Error:', error))
+    .then(response => console.log('Success:', response));
     res.render("profile", { user: profileData.data, posts: media.data });
   } catch (err) {
     console.log(err);
