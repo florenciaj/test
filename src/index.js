@@ -1,7 +1,7 @@
-const express = require('express');
-const morgan = require('morgan');
-const engine = require('ejs-mate');
-const path = require('path');
+import express from 'express';
+import morgan from 'morgan';
+import engine from 'ejs-mate';
+import path from 'path';
 const app = express();
 
 //settings
