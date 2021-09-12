@@ -1,9 +1,7 @@
-import express from "express";
+const express = require("express");
 const router = express.Router();
 require('dotenv').config();
-import fetch from "node-fetch";
-
-
+const fetch = require('node-fetch');
 
 // Instagram API
 const Instagram = require("node-instagram").default;
@@ -54,15 +52,14 @@ router.get("/profile", async (req, res) => {
   console.log('url ', url);
 
   try {
-    fetch(url, {
-      method: 'GET', // or 'PUT'
-    }).then(res => {
+    fetch(url)
+    .then(res => {
       console.log('res ', res);
       res.json();
       console.log('res.json() ', res.json());
     })
-      .catch(error => console.error('Error:', error))
-      .then(response => console.log('Success:', response));
+    .then(text => console.log(text))
+    .catch(error => console.log(error));
     res.render("profile", { user: profileData.data, posts: media.data });
   } catch (err) {
     console.log(err);
