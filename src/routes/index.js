@@ -53,7 +53,11 @@ router.get("/profile", async (req, res) => {
   try {
     fetch(url, {
       method: 'GET', // or 'PUT'
-    }).then(res => res.json())
+    }).then(res => {
+      console.log('res ', res);
+      res.json();
+      console.log('res.json() ', res.json());
+    })
     .catch(error => console.error('Error:', error))
     .then(response => console.log('Success:', response));
     res.render("profile", { user: profileData.data, posts: media.data });
