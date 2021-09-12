@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 require('dotenv').config();
-import fetch from 'node-fetch';
+const fetchE = require("node-fetch");
 
 
 
