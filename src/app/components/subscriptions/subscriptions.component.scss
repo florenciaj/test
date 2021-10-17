@@ -1,0 +1,33 @@
+.card {
+	max-width: 300px;
+	border: none;
+	border-radius: 1.3rem;
+	box-shadow: 0 0 20px 1px #d0d0d0;
+	&:hover {
+		box-shadow: 0 0 20px 5px #d0d0d0;
+	}
+	mat-card-title {
+		font-weight: bold;
+		font-size: 1.9rem;
+	}
+	mat-card-content {
+		mat-list {
+			mat-list-item.not-available {
+				color: var(--textSecondary);
+			}
+		}
+	}
+	mat-card-actions {
+		.price {
+			font-weight: bold;
+			font-size: 3rem;
+		}
+	}
+	&.card-main {
+		background-color: #103178;
+		color: white;
+		mat-list-item {
+			color: white;
+		}
+	}
+}

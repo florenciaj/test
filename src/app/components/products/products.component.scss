@@ -1,0 +1,40 @@
+.products{
+    .card{
+        border: none;
+        box-shadow: 0 0 20px 1px #d0d0d0;
+        font-size: 1rem;
+        &:hover{
+        box-shadow: 0 0 20px 5px #d0d0d0;
+        cursor: pointer;
+        }
+        .card-header{
+            border: none;
+            .seller-photo{
+                height: 25px;
+                width: 25px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+            }
+            .seller-username{
+                font-size: 0.9rem;
+            }
+        }
+        img{
+            max-height: 17rem;
+            min-height: 17rem;
+            object-fit: cover;
+        }
+        .card-body{
+            .card-title{
+                min-height: 2rem;
+                max-height: 2rem;
+                font-size: 1.05rem;
+                font-weight: normal;
+            }
+            .card-text{
+                font-weight: 500;
+            }
+        }
+    }
+}

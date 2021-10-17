@@ -1,0 +1,57 @@
+.general-info {
+	h4 {
+		font-weight: normal;
+	}
+}
+
+.add-product {
+	.photos {
+		.top-photos,
+		.bottom-photos {
+			.photo {
+				width: 18rem;
+				height: 18rem;
+				background-color: #c0c0c0;
+			}
+		}
+	}
+
+	.wrapper {
+		display: flex;
+		button.plusminus,
+		button.plusminus {
+			border: none;
+			font-size: 1.1rem;
+		}
+		input {
+			text-align: center;
+		}
+	}
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+.example-chip-list {
+	width: 100%;
+}
+
+.form {
+	min-width: 150px;
+	width: 100%;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.half-width {
+	width: 48%;
+}

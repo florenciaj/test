@@ -1,0 +1,43 @@
+.navbar {
+	background-color: var(--pink) !important;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+	a {
+		color: white !important;
+	}
+
+	.navbar-brand {
+		font-weight: bold;
+	}
+
+	.collapse {
+		form {
+			input {
+				background-color: transparent;
+				border: none;
+				border-bottom: 1px solid white;
+				border-radius: 0;
+				font-family: FontAwesome, 'Rubik', sans-serif;
+				font-style: normal;
+				font-weight: normal;
+				text-decoration: inherit;
+				&:focus {
+					box-shadow: none;
+				}
+				&::placeholder {
+					color: white;
+				}
+				&.form-control {
+					color: white;
+				}
+			}
+			ul {
+				li {
+					i {
+						color: white;
+						margin-top: 0.7rem;
+					}
+				}
+			}
+		}
+	}
+}

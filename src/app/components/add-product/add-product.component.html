@@ -1,0 +1,81 @@
+<div class="container mt-5">
+	<div class="general-info pb-4">
+		<h1>Publicá tu producto</h1>
+		<h4>Completá los datos, subí una foto y publicalo</h4>
+	</div>
+
+	<div class="add-product my-5 d-flex justify-content-between row">
+		<div class="photos col-6">
+			<div class="top-photos d-flex mb-2">
+				<div class="photo me-2 rounded"></div>
+				<div class="photo me-2 rounded"></div>
+			</div>
+			<div class="bottom-photos d-flex mt-2">
+				<div class="photo me-2 rounded"></div>
+				<div class="photo me-2 rounded"></div>
+			</div>
+		</div>
+
+		<div class="info col-6">
+			<form class="form w-100">
+				<mat-form-field class="full-width mb-3" appearance="fill">
+					<mat-label>Nombre</mat-label>
+					<input matInput placeholder="Ej: Mate artesanal con bombilla" />
+				</mat-form-field>
+
+				<mat-form-field class="full-width mb-3" appearance="fill">
+					<mat-label>Categoría</mat-label>
+					<mat-select>
+						<mat-option value="one">Indumentaria</mat-option>
+						<mat-option value="two">Hogar</mat-option>
+						<mat-option value="three">Jardín</mat-option>
+						<mat-option value="four">Artesanias</mat-option>
+						<mat-option value="five">Indumentaria</mat-option>
+						<mat-option value="six">Electrónica</mat-option>
+						<mat-option value="seven">Juegos</mat-option>
+					</mat-select>
+				</mat-form-field>
+
+				<mat-form-field class="full-width mb-3" appearance="fill">
+					<mat-label>Descripción</mat-label>
+					<textarea matInput placeholder="Describí al producto detalladamente aquí"></textarea>
+				</mat-form-field>
+
+				<mat-form-field class="example-chip-list mb-3" appearance="fill">
+					<mat-label>Hashtags</mat-label>
+					<mat-chip-list #chipList aria-label="Fruit selection">
+						<mat-chip *ngFor="let hashtag of hashtags" [selectable]="selectable" [removable]="removable" (removed)="remove(hashtag)">
+							{{ hashtag.name }}
+							<button matChipRemove *ngIf="removable">
+								<mat-icon>cancel</mat-icon>
+							</button>
+						</mat-chip>
+						<input
+							placeholder="Nuevo hashtag..."
+							[matChipInputFor]="chipList"
+							[matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+							[matChipInputAddOnBlur]="addOnBlur"
+							(matChipInputTokenEnd)="add($event)" />
+					</mat-chip-list>
+				</mat-form-field>
+
+				<mat-form-field class="me-3 mb-3 half-width" appearance="fill" floatLabel="always">
+					<mat-label>Precio</mat-label>
+					<input matInput type="number" class="example-right-align" placeholder="0" />
+					<span matPrefix>$&nbsp;</span>
+				</mat-form-field>
+
+				<mat-form-field class="mb-3 half-width" appearance="fill" floatLabel="always">
+					<mat-label>Stock</mat-label>
+					<div class="wrapper">
+						<button class="plusminus" (click)="handleMinus()">-</button>
+						<input matInput type="number" class="num" value="{{ priceValue }}" step="0.01" />
+						<button class="plusminus" (click)="handlePlus()">+</button>
+					</div>
+				</mat-form-field>
+
+				<button mat-flat-button color="primary" class="btn-full" (click)="openDialog()">Publicar</button>
+			</form>
+		</div>
+	</div>
+</div>
